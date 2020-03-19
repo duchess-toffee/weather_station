@@ -1,0 +1,26 @@
+{
+  "name": "weather_station",
+  "version": "1.0.0",
+  "description": "m3 weather station",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "test:watch": "jest --watch --coverage",
+    "sass:watch": "sass --watch css/style.sass css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "weather_station"
+  },
+  "keywords": [
+    "weather",
+    "station",
+    "m3"
+  ],
+  "author": "Hannah Ong",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.1.0",
+    "sass": "^1.26.3"
+  }
+}

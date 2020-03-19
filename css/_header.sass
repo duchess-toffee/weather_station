@@ -1,0 +1,70 @@
+header
+    font-family: $font-stack
+    background: $white
+    font-size: 1.1em
+    font-weight: 700
+    padding: 5% 5% 0 5%
+    text-transform: uppercase
+    color: $text-color
+    min-width: 250px
+    
+    .header-bottom
+        margin-top: 10%
+        +flex(row, space-between, center)        
+
+        .input
+            +flex(row, center, center)
+            border: 4px solid $accent2-color
+            border-radius: 10px
+            width: 70%
+
+            .tooltip-error
+                position: absolute
+                top: 12em
+                left: 1.5em
+                background: $card-color
+                padding: 7px
+                border-radius: 5px
+                text-transform: none
+                font-size: .75em
+                font-weight: 500
+                display: none
+
+                &::after
+                   content: ""
+                   position: absolute
+                   width: 10px
+                   height: 10px
+                   transform: rotate(45deg)
+                   right: 9em
+                   top: -.5em
+                   background: $card-color
+                
+
+            input
+                height: 35px
+                width: 100%
+                border: 1px solid $accent2-color
+                border-top-left-radius: 5px 5px
+                border-bottom-left-radius: 5px 5px
+            button
+                text-transform: uppercase
+                margin-left: -1px
+                height: 39px
+                width: 40px
+                border: 1px solid $accent2-color
+                border-left: 5px solid $accent2-color
+                border-top-right-radius: 5px 5px
+                border-bottom-right-radius: 5px 5px
+                background: $light-accent
+                font-size: 30px
+                color: $text-color
+        
+        .temp
+            font-size: 1.25em
+
+            .f
+                font-weight: 600
+            
+            .c
+                font-weight: 300
