@@ -9,37 +9,36 @@ header
     min-width: 250px
     
     .header-bottom
+        position: relative
         margin-top: 10%
-        +flex(row, space-between, center)        
+        +flex(row, space-between, center)
+        
+        .tooltip-error
+            position: absolute
+            top: 100%
+            background: $card-color
+            padding: 7px
+            border-radius: 5px
+            text-transform: none
+            font-size: .75em
+            font-weight: 500
+            display: none
+
+            &::after
+                content: ""
+                position: absolute
+                width: 10px
+                height: 10px
+                transform: rotate(45deg)
+                bottom: 85%
+                left: 5%
+                background: $card-color
 
         .input
             +flex(row, center, center)
             border: 4px solid $accent2-color
             border-radius: 10px
             width: 70%
-
-            .tooltip-error
-                position: absolute
-                top: 27%
-                left: 38%
-                background: $card-color
-                padding: 7px
-                border-radius: 5px
-                text-transform: none
-                font-size: .75em
-                font-weight: 500
-                display: none
-
-                &::after
-                   content: ""
-                   position: absolute
-                   width: 10px
-                   height: 10px
-                   transform: rotate(45deg)
-                   right: 9em
-                   top: -.5em
-                   background: $card-color
-                
 
             input
                 height: 35px
