@@ -2,16 +2,16 @@
 
 ## Requirements
 
-1.  User enters in a city name
-1. User clicks "add city"
-1. A request to opencagedata is made to retrieve the lat/long coordinates of the city
-1. An error is shown if the city does not exist
-1. Otherwise, a new "weather card" is created on the page
-1. The weather card queries the current weather data for the provided lat/long from two sources, openweathermap and darksky
-1. The data is rendered to the card
-1. Using setTimeout, the card should cycle between the data provided by the two weather sources every 20 seconds. Careful! We don't want to FETCH the data every 20 seconds. We're only toggling which source data to display.
-1. Another timer should be installed to refetch the weather data every 5 minutes from the two data sources.
-1. An x button on the weather card should remove the card when pressed. Removing the card should also deactivate any timers present.
+1. User enters in a city name
+2. User clicks "add city"
+3. A request to opencagedata is made to retrieve the lat/long coordinates of the city
+4. An error is shown if the city does not exist
+5. Otherwise, a new "weather card" is created on the page
+6. The weather card queries the current weather data for the provided lat/long from two sources, openweathermap and darksky (not using darksky anymore due to CORS)
+7. The data is rendered to the card
+8. Using setTimeout, the card should cycle between the data provided by the two weather sources every 20 seconds. Careful! We don't want to FETCH the data every 9 seconds. We're only toggling which source data to display.
+10. Another timer should be installed to refetch the weather data every 5 minutes from the two data sources.
+11. An x button on the weather card should remove the card when pressed. Removing the card should also deactivate any timers present.
 
 <br/>
 
@@ -43,19 +43,19 @@ Main risks that I see on this are:
 
 ## Minimum Viable Product
 
-- [ ] A list of cities you are tracking weather on
-- [ ] A search bar to query for a city
-- [ ] A way to add a city to your list
-- [ ] A way to remove a city from your list
-- [ ] A way to choose your temperature (F or C)
-- [ ] Each city being tracked should have:
-- - [ ] The name (city, country) or (city, state if in the US if API provided)
-- - [ ] The current temperature, in the user's selected degrees
-- - [ ] The weather (eg: 'raining', 'sunny', etc)
-- - [ ] The humidity in percentage
-- - [ ] The source (openweather/darksky)
-- - [ ] An image of the weather
-- [ ] Attribution to darksky/openweather
+- [x] A list of cities you are tracking weather on
+- [x] A search bar to query for a city
+- [x] A way to add a city to your list
+- [x] A way to remove a city from your list
+- [x] A way to choose your temperature (F or C)
+- [x] Each city being tracked should have:
+- - [x] The name (city, country) or (city, state if in the US if API provided)
+- - [x] The current temperature, in the user's selected degrees
+- - [x] The weather (eg: 'raining', 'sunny', etc)
+- - [x] The humidity in percentage
+- - [x] The source (openweather/darksky) (not using darksky anymore due to CORS)
+- - [x] An image of the weather
+- [x] Attribution to darksky/openweather (not using darksky anymore due to CORS, openweather does not require attribution)
 
 
 <br/>
@@ -103,7 +103,7 @@ Main risks that I see on this are:
 
 ## JS
 - [x] Use `strict mode`
-- [ ] Class Interface
+- [x] Class Interface
 - - [x] Properties: listener for input/add/remove
 - - [x] As you add a city, it will go to the WeatherConvert class 
 - - [x] The remove will access the WeatherData class and WeatherDisplay class
@@ -112,7 +112,7 @@ Main risks that I see on this are:
 - [x]  Class WeatherData
 - - [x] Properties: object(s) that holds queried data of city/country/state, humidity, temp in F and C, weather type; listener to query for the data every 5 minutes
 - - [x] Method to query data from a weather source to store into object
-- - [ ] 2 instances of WeatherData (openWeatherMap & darksky)
+- - [x] 2 instances of WeatherData (openWeatherMap & darksky) (not using darksky anymore due to CORS)
 - [x] Class WeatherDisplay
 - - [x] Static object for emoji/weather type conversion 
 - - [x] Method to add/display card (set HTML elements & CSS classes)
@@ -137,4 +137,3 @@ Main risks that I see on this are:
 - [ ] Test the emoji/weather type conversion
 - [ ] Test that removing the card, removes the HTML elements
 - [ ] Test that the source is changing every 20 seconds
-

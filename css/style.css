@@ -430,8 +430,8 @@ header .header-bottom .input {
 }
 header .header-bottom .input .tooltip-error {
   position: absolute;
-  top: 12em;
-  left: 1.5em;
+  top: 27%;
+  left: 38%;
   background: #d6e6f2;
   padding: 7px;
   border-radius: 5px;
